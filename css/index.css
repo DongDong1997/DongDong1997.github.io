@@ -1395,6 +1395,16 @@ body {
 input::placeholder {
   color: var(--font-color);
 }
+#web_bg {
+  position: fixed;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 h1,
 h2,
 h3,
@@ -1524,14 +1534,14 @@ blockquote > :last-child {
   text-align: center;
 }
 :root {
-  --hl-color: #90a4ae;
-  --hl-bg: #f6f8fa;
-  --hltools-bg: #e6ebf1;
-  --hltools-color: #90a4ae;
-  --hlnumber-bg: #f6f8fa;
-  --hlnumber-color: rgba(144,164,174,0.5);
-  --hlscrollbar-bg: #dce4eb;
-  --hlexpand-bg: linear-gradient(180deg, rgba(246,248,250,0.6), rgba(246,248,250,0.9));
+  --hl-color: #8f93a2;
+  --hl-bg: #0f111a;
+  --hltools-bg: #0b0d14;
+  --hltools-color: #8f93a2;
+  --hlnumber-bg: #0f111a;
+  --hlnumber-color: rgba(143,147,162,0.5);
+  --hlscrollbar-bg: #1e2234;
+  --hlexpand-bg: linear-gradient(180deg, rgba(15,17,26,0.6), rgba(15,17,26,0.9));
 }
 [data-theme='dark'] {
   --hl-color: rgba(255,255,255,0.7);
@@ -1556,10 +1566,10 @@ figure.highlight pre .addition {
   color: #105ede;
 }
 figure.highlight pre .meta {
-  color: #7c4dff;
+  color: #c792ea;
 }
 figure.highlight pre .comment {
-  color: rgba(149,165,166,0.8);
+  color: rgba(101,115,126,0.8);
 }
 figure.highlight pre .variable,
 figure.highlight pre .attribute,
@@ -1573,10 +1583,10 @@ figure.highlight pre .css .id,
 figure.highlight pre .tag .name,
 figure.highlight pre .css .class,
 figure.highlight pre .css .pseudo {
-  color: #e53935;
+  color: #ff5370;
 }
 figure.highlight pre .tag {
-  color: #39adb5;
+  color: #89ddff;
 }
 figure.highlight pre .number,
 figure.highlight pre .preprocessor,
@@ -1584,10 +1594,10 @@ figure.highlight pre .literal,
 figure.highlight pre .params,
 figure.highlight pre .constant,
 figure.highlight pre .command {
-  color: #f76d47;
+  color: #f78c6c;
 }
 figure.highlight pre .built_in {
-  color: #ffb62c;
+  color: #ffcb6b;
 }
 figure.highlight pre .ruby .class .title,
 figure.highlight pre .css .rules .attribute,
@@ -1600,12 +1610,12 @@ figure.highlight pre .xml .cdata,
 figure.highlight pre .special,
 figure.highlight pre .number,
 figure.highlight pre .formula {
-  color: #91b859;
+  color: #c3e88d;
 }
 figure.highlight pre .keyword,
 figure.highlight pre .title,
 figure.highlight pre .css .hexcolor {
-  color: #39adb5;
+  color: #89ddff;
 }
 figure.highlight pre .function,
 figure.highlight pre .python .decorator,
@@ -1615,14 +1625,14 @@ figure.highlight pre .ruby .title .keyword,
 figure.highlight pre .perl .sub,
 figure.highlight pre .javascript .title,
 figure.highlight pre .coffeescript .title {
-  color: #6182b8;
+  color: #82aaff;
 }
 figure.highlight pre .tag .attr,
 figure.highlight pre .javascript .function {
-  color: #7c4dff;
+  color: #c792ea;
 }
 .container figure.highlight .line.marked {
-  background-color: rgba(128,203,196,0.251);
+  background-color: rgba(113,124,180,0.314);
 }
 .container figure.highlight table {
   display: block;
@@ -3699,6 +3709,8 @@ figure.highlight pre .javascript .function {
   -o-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s;
+  font-family: 'Comic Sans MS', '幼圆', 'Yuanti SC', cursive, sans-serif;
+  letter-spacing: 0.5px;
 }
 @media screen and (max-width: 768px) {
   #nav {
@@ -3749,24 +3761,27 @@ figure.highlight pre .javascript .function {
   font-weight: bold;
 }
 #nav .menus_items {
-  display: inline;
+  display: inline-block;
 }
-#nav .menus_items .menus_item {
+margin: 0 auto {
+  text-align: center;
+}
+margin: 0 auto .menus_item {
   position: relative;
   display: inline-block;
   padding: 0 0 0 14px;
 }
-#nav .menus_items .menus_item:hover .menus_item_child {
+margin: 0 auto .menus_item:hover .menus_item_child {
   display: block;
 }
-#nav .menus_items .menus_item:hover > span > i:last-child {
+margin: 0 auto .menus_item:hover > span > i:last-child {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-#nav .menus_items .menus_item > span > i:last-child {
+margin: 0 auto .menus_item > span > i:last-child {
   padding: 4px;
   -webkit-transition: -webkit-transform 0.3s;
   -moz-transition: -moz-transform 0.3s;
@@ -3774,7 +3789,7 @@ figure.highlight pre .javascript .function {
   -ms-transition: -ms-transform 0.3s;
   transition: transform 0.3s;
 }
-#nav .menus_items .menus_item .menus_item_child {
+margin: 0 auto .menus_item .menus_item_child {
   position: absolute;
   right: 0;
   display: none;
@@ -3791,7 +3806,7 @@ figure.highlight pre .javascript .function {
   animation: sub_menus 0.3s 0.1s ease both;
   border-radius: 5px;
 }
-#nav .menus_items .menus_item .menus_item_child:before {
+margin: 0 auto .menus_item .menus_item_child:before {
   position: absolute;
   top: -8px;
   left: 0;
@@ -3799,51 +3814,51 @@ figure.highlight pre .javascript .function {
   height: 20px;
   content: '';
 }
-#nav .menus_items .menus_item .menus_item_child li {
+margin: 0 auto .menus_item .menus_item_child li {
   list-style: none;
 }
-#nav .menus_items .menus_item .menus_item_child li:hover {
+margin: 0 auto .menus_item .menus_item_child li:hover {
   background: var(--text-bg-hover);
 }
-#nav .menus_items .menus_item .menus_item_child li:first-child {
+margin: 0 auto .menus_item .menus_item_child li:first-child {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-#nav .menus_items .menus_item .menus_item_child li:last-child {
+margin: 0 auto .menus_item .menus_item_child li:last-child {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-#nav .menus_items .menus_item .menus_item_child li a {
+margin: 0 auto .menus_item .menus_item_child li a {
   display: inline-block;
   padding: 8px 16px;
   width: 100%;
   color: var(--font-color) !important;
   text-shadow: none !important;
 }
-#nav.hide-menu #toggle-menu {
+.hide-menu #toggle-menu {
   display: inline-block !important;
 }
-#nav.hide-menu #toggle-menu .site-page {
+.hide-menu #toggle-menu .site-page {
   font-size: inherit;
 }
-#nav.hide-menu .menus_items {
+.hide-menu .menus_items {
   display: none;
 }
-#nav.hide-menu #search-button span:not(.site-page) {
+.hide-menu #search-button span:not(.site-page) {
   display: none;
 }
-#nav #search-button {
+#search-button {
   display: inline;
   padding: 0 0 0 14px;
 }
-#nav .site-page {
+.site-page {
   position: relative;
   padding-bottom: 6px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
   font-size: 0.78em;
   cursor: pointer;
 }
-#nav .site-page:not(.child):after {
+.site-page:not(.child):after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -3859,15 +3874,15 @@ figure.highlight pre .javascript .function {
   transition: all 0.3s ease-in-out;
   border-radius: 6px;
 }
-#nav .site-page:not(.child):hover:after {
+.site-page:not(.child):hover:after {
   width: 100%;
 }
-#nav .nav-page-title {
+.nav-page-title {
   position: relative;
   overflow: hidden;
 }
-#nav .nav-page-title > :first-child,
-#nav .nav-page-title > :last-child {
+.nav-page-title > :first-child,
+.nav-page-title > :last-child {
   display: inline-block;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -3875,7 +3890,7 @@ figure.highlight pre .javascript .function {
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-#nav .nav-page-title > :last-child {
+.nav-page-title > :last-child {
   position: absolute;
   top: 50%;
   left: 0;
@@ -3888,7 +3903,7 @@ figure.highlight pre .javascript .function {
   -ms-transform: translateY(-50%) translateY(-10px);
   transform: translateY(-50%) translateY(-10px);
 }
-#nav .nav-page-title:hover > :last-child {
+.nav-page-title:hover > :last-child {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -3898,7 +3913,7 @@ figure.highlight pre .javascript .function {
   -ms-transform: translateY(-50%) translateY(0);
   transform: translateY(-50%) translateY(0);
 }
-#nav .nav-page-title:hover > :first-child {
+.nav-page-title:hover > :first-child {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);

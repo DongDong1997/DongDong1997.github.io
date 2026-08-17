@@ -1,0 +1,277 @@
+/* ============================================================
+   项目展示区样式
+   ============================================================ */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: inherit;
+  min-height: 220px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--neon-cyan);
+}
+
+.folder-icon {
+  font-size: 1.6rem;
+  filter: drop-shadow(0 0 6px var(--neon-cyan));
+}
+
+.external-icon {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .external-icon {
+  color: var(--neon-pink);
+}
+
+.project-title {
+  font-size: 1.15rem;
+  color: var(--neon-cyan);
+  margin: 0;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+
+.project-card:hover .project-title {
+  color: var(--neon-pink);
+  text-shadow: var(--glow-pink);
+}
+
+.project-desc {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tech-tag {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid rgba(180, 0, 255, 0.4);
+  color: var(--neon-purple);
+  border-radius: 3px;
+  background: rgba(180, 0, 255, 0.05);
+}
+
+.project-stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.project-stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ============================================================
+   工具栏 / 状态 / 旋转动画
+   ============================================================ */
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.projects-header .section-title {
+  margin-bottom: 0;
+}
+
+.projects-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.sort-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 4px;
+  color: var(--neon-cyan);
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+}
+
+.sort-control select {
+  background: transparent;
+  color: var(--text-primary);
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.sort-control select option {
+  background: var(--bg-base);
+  color: var(--text-primary);
+}
+
+.refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background: var(--neon-cyan);
+  color: var(--bg-base);
+  box-shadow: var(--glow-cyan);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.refresh-btn.pink {
+  border-color: var(--neon-pink);
+  color: var(--neon-pink);
+}
+
+.refresh-btn.pink:hover:not(:disabled) {
+  background: var(--neon-pink);
+  color: var(--bg-base);
+  box-shadow: var(--glow-pink);
+}
+
+/* ============================================================
+   缓存命中徽章
+   ============================================================ */
+
+.cache-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  border-radius: 3px;
+  text-shadow: 0 0 4px rgba(0, 240, 255, 0.4);
+  letter-spacing: 0.05em;
+  cursor: help;
+  animation: cache-pulse 3s ease-in-out infinite;
+}
+
+.cache-badge svg {
+  font-size: 0.7rem;
+}
+
+@keyframes cache-pulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(0, 240, 255, 0); }
+  50%      { box-shadow: 0 0 8px rgba(0, 240, 255, 0.4); }
+}
+
+.spin {
+  animation: rotate 1.2s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.projects-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 2rem;
+  color: var(--neon-cyan);
+  font-size: 0.95rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.projects-status.error {
+  color: var(--neon-pink);
+}
+
+.projects-status button {
+  margin-left: 0.6rem;
+  padding: 0.3rem 0.8rem;
+  background: transparent;
+  border: 1px solid var(--neon-pink);
+  color: var(--neon-pink);
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.projects-status button:hover {
+  background: var(--neon-pink);
+  color: var(--bg-base);
+}
+
+.projects-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 2rem;
+}
+
+.projects-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .projects-toolbar {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .cache-badge {
+    font-size: 0.7rem;
+  }
+}

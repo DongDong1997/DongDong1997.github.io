@@ -1,0 +1,50 @@
+/* ============================================================
+   GitHub 统计卡片样式
+   ============================================================ */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-img-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--neon-cyan);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+.card-icon {
+  color: var(--neon-pink);
+  filter: drop-shadow(0 0 4px var(--neon-pink));
+}
+
+.stats-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.trophy-card {
+  grid-column: 1 / -1;
+}

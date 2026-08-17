@@ -1,0 +1,100 @@
+/* ============================================================
+   导航栏样式
+   ============================================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 2rem;
+  background: transparent;
+  backdrop-filter: blur(0);
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled {
+  background: rgba(10, 10, 20, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--bg-card-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+.brand-bracket {
+  color: var(--neon-pink);
+  text-shadow: 0 0 8px var(--neon-pink);
+  margin: 0 2px;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navbar-menu a {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  text-transform: lowercase;
+  position: relative;
+  padding: 0.3rem 0;
+}
+
+.navbar-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--neon-pink);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 4px var(--neon-pink);
+}
+
+.navbar-menu a:hover::after {
+  width: 100%;
+}
+
+.navbar-time {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--neon-cyan);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 90px;
+}
+
+.time-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--neon-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--neon-cyan);
+  animation: pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.7rem 1rem;
+  }
+  .navbar-menu {
+    gap: 1rem;
+  }
+  .navbar-time {
+    display: none;
+  }
+}

@@ -1,0 +1,74 @@
+/* ============================================================
+   About / Skills 区块样式
+   ============================================================ */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-text-card {
+  min-height: 280px;
+}
+
+.about-log {
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.log-line {
+  display: block;
+}
+
+.card-title {
+  color: var(--neon-cyan);
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--chip-color);
+  color: var(--chip-color);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: default;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 6px var(--chip-color);
+}
+
+.skill-chip:hover {
+  background: var(--chip-color);
+  color: var(--bg-base);
+  text-shadow: none;
+  box-shadow: 0 0 12px var(--chip-color);
+}
+
+.skill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--chip-color);
+  box-shadow: 0 0 6px var(--chip-color);
+}
